@@ -108,13 +108,23 @@ function toast(message) {
 }
 
 function renderMarkers(list) {
+  
   const layer = el('mapMarkers');
+
+  // The old demo marker container may not exist.
+  // Skip it safely so the charts can still update.
+  if (!layer) return;
+
   layer.innerHTML = list.slice(0, 9).map((r, i) => {
     const x = 8 + (i * 10) % 80;
     const y = 15 + (i * 13) % 70;
-    return `<i class="fa-solid fa-location-pin marker" style="left:${x}%; top:${y}%;" title="${r.type}"></i>`;
+
+    return `<i class="fa-solid fa-location-pin marker"
+      style="left:${x}%; top:${y}%;"
+      title="${r.type}"></i>`;
   }).join('');
 }
+
 
 function getCountsBy(field) {
   return reports.reduce((acc, r) => (acc[r[field]] = (acc[r[field]] || 0) + 1, acc), {});
