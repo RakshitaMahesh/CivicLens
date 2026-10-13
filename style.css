@@ -319,3 +319,89 @@ canvas { background:#081b30; border:1px solid #27466b; border-radius:12px; paddi
     }
 }
 
+
+
+/* Layout and analytics fixes */
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.content,
+.section,
+.panel,
+.hero,
+.grid-2,
+.chart-grid,
+.civic-map {
+  min-width: 0;
+}
+.content {
+  width: 100%;
+}
+.hero > *,
+.grid-2 > *,
+.chart-grid > * {
+  min-width: 0;
+}
+.hero-search {
+  max-width: 100%;
+}
+.chart-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+.chart-grid canvas {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: 250px !important;
+  padding: 0;
+}
+#civicLeafletMap {
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 980px) {
+  body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    padding: 1rem;
+  }
+  .stats-grid,
+  .grid-2,
+  .chart-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-search {
+    min-width: 0;
+    width: 100%;
+  }
+  .panel-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filters {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 981px) and (max-width: 1250px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
