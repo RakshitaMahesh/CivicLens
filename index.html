@@ -98,27 +98,64 @@
       <div id="reportsContainer" class="reports-grid"></div>
     </section>
 
-<section id="map" class="section glass panel">
-  <h3>
-    <i class="fa-solid fa-map-pin"></i>
-    Interactive Smart-City Map
-  </h3>
+<section id="map" class="section">
+    <div class="section-header">
+        <h2>Smart Map</h2>
+        <p>Explore reported civic issues by category and location.</p>
+    </div>
 
-<div class="map-wrap">
-    <iframe
-        title="Bengaluru City Map"
-        src="https://maps.google.com/maps?q=Bengaluru%2C%20India&t=&z=12&ie=UTF8&iwloc=&output=embed"
-        width="100%"
-        height="450"
-        style="border:0; border-radius:12px;"
-        loading="lazy"
-        allowfullscreen>
-    </iframe>
-    <div id="mapMarkers" class="marker-layer"></div>
-</div>
+    <div class="civic-map">
+        <div class="map-toolbar">
+            <div>
+                <h3>Bengaluru Civic Issues</h3>
+                <p>Illustrative issue locations for the project demo</p>
+            </div>
 
+            <a class="map-open-btn"
+               href="https://www.google.com/maps/search/?api=1&query=Bengaluru%2C%20India"
+               target="_blank"
+               rel="noopener noreferrer">
+                Open Google Maps ↗
+            </a>
+        </div>
+
+        <div class="map-canvas">
+            <div class="map-road road-one"></div>
+            <div class="map-road road-two"></div>
+            <div class="map-road road-three"></div>
+            <div class="map-road road-four"></div>
+
+            <div class="map-area area-one">Residential Area</div>
+            <div class="map-area area-two">City Centre</div>
+            <div class="map-area area-three">Public Park</div>
+
+            <div class="issue-pin pin-pothole">
+                <span>!</span>
+                <div class="pin-label">Pothole</div>
+            </div>
+
+            <div class="issue-pin pin-drainage">
+                <span>!</span>
+                <div class="pin-label">Drainage</div>
+            </div>
+
+            <div class="issue-pin pin-light">
+                <span>!</span>
+                <div class="pin-label">Streetlight</div>
+            </div>
+
+            <div class="map-caption">
+                Demo map · Marker positions are illustrative
+            </div>
+        </div>
+
+        <div class="map-legend">
+            <span><i class="legend-dot pothole-dot"></i> Potholes</span>
+            <span><i class="legend-dot drainage-dot"></i> Drainage</span>
+            <span><i class="legend-dot light-dot"></i> Streetlights</span>
+        </div>
+    </div>
 </section>
-
 
     <section id="analytics" class="section glass panel">
       <h3><i class="fa-solid fa-chart-pie"></i> Smart Analytics</h3>
