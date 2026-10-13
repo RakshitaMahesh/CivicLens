@@ -422,3 +422,19 @@ body {
   min-width: 0;
   max-width: 100%;
 }
+
+
+/* Keep Live Reports cards compact and content-sized */
+.reports-grid {
+  align-content: start;
+  align-items: start;
+}
+.report-card {
+  align-content: start;
+  align-items: start;
+  height: auto;
+  min-height: 0;
+}
+.report-card > * {
+  max-width: 100%;
+}
