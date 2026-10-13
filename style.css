@@ -483,3 +483,22 @@ body {
 .report-card .tag {
   line-height: 1.3;
 }
+
+
+/* Final safeguard: keep report feed and cards inside the dashboard width */
+.reports-grid {
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.report-card {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.report-card .tags,
+.report-card .actions {
+  max-width: 100%;
+}
