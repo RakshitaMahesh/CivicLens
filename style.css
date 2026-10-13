@@ -438,3 +438,19 @@ body {
 .report-card > * {
   max-width: 100%;
 }
+
+
+/* Tighten spacing between report details without changing the card design */
+.report-card {
+  gap: 0.45rem;
+}
+.report-card h4,
+.report-card p,
+.report-card small {
+  margin: 0;
+  line-height: 1.4;
+}
+.report-card .tags,
+.report-card .actions {
+  margin: 0;
+}
