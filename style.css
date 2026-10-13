@@ -405,3 +405,20 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+/* Prevent dashboard grid from expanding to oversized child content */
+@media (min-width: 981px) {
+  body {
+    grid-template-columns: 270px minmax(0, 1fr);
+  }
+}
+.content {
+  min-width: 0;
+  width: auto;
+  max-width: 100%;
+}
+.content > * {
+  min-width: 0;
+  max-width: 100%;
+}
