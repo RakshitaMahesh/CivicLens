@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CivicLens | Smart City Issue Reporting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader" class="loader-overlay" aria-hidden="true">
+    <div class="loader-card">
+      <div class="spinner"></div>
+      <p>Booting CivicLens Intelligence...</p>
+    </div>
+  </div>
+
+  <aside class="sidebar glass">
+    <div class="brand">
+      <i class="fa-solid fa-city"></i>
+      <div>
+        <h1>CivicLens</h1>
+        <p>Smart City Ops</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Dashboard</a>
+      <a href="#report" class="nav-link"><i class="fa-solid fa-file-circle-plus"></i> Report Issue</a>
+      <a href="#live" class="nav-link"><i class="fa-solid fa-bell"></i> Live Tracking</a>
+      <a href="#prediction" class="nav-link"><i class="fa-solid fa-brain"></i> AI Monitoring</a>
+      <a href="#map" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Smart Map</a>
+      <a href="#analytics" class="nav-link"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section id="hero" class="hero glass section">
+      <div>
+        <h2>Urban Intelligence Dashboard</h2>
+        <p>Report civic issues and monitor city response in real-time with AI-assisted triage.</p>
+      </div>
+      <div class="hero-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="searchInput" type="text" placeholder="Search reports by location, type or description" />
+      </div>
+    </section>
+
+    <section class="stats-grid section">
+      <article class="stat-card glass"><i class="fa-solid fa-folder-open"></i><h3 id="totalReports">0</h3><p>Total Reports</p></article>
+      <article class="stat-card glass"><i class="fa-solid fa-triangle-exclamation"></i><h3 id="criticalReports">0</h3><p>Critical Issues</p></article>
+      <article class="stat-card glass"><i class="fa-solid fa-circle-check"></i><h3 id="resolvedReports">0</h3><p>Resolved Issues</p></article>
+      <article class="stat-card glass"><i class="fa-solid fa-hourglass-half"></i><h3 id="pendingReports">0</h3><p>Pending Issues</p></article>
+    </section>
+
+    <section id="report" class="section grid-2">
+      <div class="glass panel">
+        <h3><i class="fa-solid fa-file-pen"></i> Report New Issue</h3>
+        <form id="issueForm">
+          <div class="field"><label for="media">Upload Image/Video</label><input type="file" id="media" accept="image/*,video/*" /></div>
+          <div class="field"><label for="issueType">Issue Type</label>
+            <select id="issueType" required>
+              <option value="">Select issue type</option>
+              <option>Pothole</option>
+              <option>Garbage overflow</option>
+              <option>Broken streetlight</option>
+              <option>Drainage problem</option>
+              <option>Fallen tree</option>
+            </select>
+          </div>
+          <div class="field"><label for="description">Description</label><textarea id="description" rows="3" required></textarea></div>
+          <div class="field"><label for="location">GPS Location / Address</label><input id="location" type="text" placeholder="e.g. 12.9716, 77.5946" required /></div>
+          <div class="field readonly"><label>Report Date & Time</label><input id="reportTime" type="text" readonly /></div>
+          <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Report</button>
+        </form>
+      </div>
+
+      <div id="prediction" class="glass panel">
+        <h3><i class="fa-solid fa-satellite"></i> AI Monitoring Alerts</h3>
+        <div class="alerts">
+          <div class="alert-card pulse"><i class="fa-solid fa-water"></i><p>Flood risk detected in low drainage area.</p></div>
+          <div class="alert-card pulse"><i class="fa-solid fa-tree"></i><p>Tree fall risk due to heavy rainfall.</p></div>
+          <div class="alert-card pulse"><i class="fa-solid fa-road"></i><p>Road likely to develop potholes soon.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="live" class="section glass panel">
+      <div class="panel-head">
+        <h3><i class="fa-solid fa-list-check"></i> Live Reports Feed</h3>
+        <div class="filters">
+          <select id="severityFilter"><option value="all">All Severity</option><option>Low</option><option>Medium</option><option>Critical</option></select>
+          <select id="statusFilter"><option value="all">All Status</option><option>Reported</option><option>In Progress</option><option>Resolved</option></select>
+        </div>
+      </div>
+      <div id="reportsContainer" class="reports-grid"></div>
+    </section>
+
+    <section id="map" class="section glass panel">
+      <h3><i class="fa-solid fa-map-pin"></i> Interactive Smart-City Map</h3>
+      <div class="map-wrap">
+        <iframe title="City map" src="https://maps.google.com/maps?q=New%20York&t=&z=11&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+        <div id="mapMarkers" class="marker-layer"></div>
+      </div>
+    </section>
+
+    <section id="analytics" class="section glass panel">
+      <h3><i class="fa-solid fa-chart-pie"></i> Smart Analytics</h3>
+      <div class="chart-grid">
+        <canvas id="categoryChart"></canvas>
+        <canvas id="statusChart"></canvas>
+        <canvas id="criticalChart"></canvas>
+      </div>
+    </section>
+
+    <footer class="footer">Created by Sarika Jaganath | Quad Core Events</footer>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
