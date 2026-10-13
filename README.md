@@ -16,3 +16,7 @@
 
 ### 5. Smart Analytics
 ![Smart Analytics](analytics.png)
+
+## 🌐 Live Demo
+
+**[View CivicLens Live Website](https://rakshitamahesh.github.io/CivicLens/)**
