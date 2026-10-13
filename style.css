@@ -91,3 +91,231 @@ canvas { background:#081b30; border:1px solid #27466b; border-radius:12px; paddi
   .hero { flex-direction:column; align-items:flex-start; }
   .hero-search { min-width:0; width:100%; }
 }
+/* CivicLens Smart Map */
+.civic-map {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.map-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.map-toolbar h3 {
+    margin: 0 0 6px;
+    color: #172554;
+}
+
+.map-toolbar p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.map-open-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.map-open-btn:hover {
+    background: #1d4ed8;
+}
+
+.map-canvas {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    background-color: #edf3e8;
+    background-image:
+        linear-gradient(30deg, transparent 48%, #d6e4ce 49%, #d6e4ce 53%, transparent 54%),
+        linear-gradient(120deg, transparent 45%, #d6e4ce 46%, #d6e4ce 50%, transparent 51%),
+        repeating-linear-gradient(0deg, transparent 0 55px, #dce8d5 56px 58px),
+        repeating-linear-gradient(90deg, transparent 0 70px, #dce8d5 71px 73px);
+}
+
+.map-road {
+    position: absolute;
+    height: 13px;
+    background: #fff;
+    border: 2px solid #d5dce4;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 20px;
+}
+
+.road-one {
+    width: 120%;
+    top: 42%;
+    left: -10%;
+    transform: rotate(-13deg);
+}
+
+.road-two {
+    width: 100%;
+    top: 62%;
+    left: 5%;
+    transform: rotate(24deg);
+}
+
+.road-three {
+    width: 90%;
+    top: 24%;
+    left: 15%;
+    transform: rotate(52deg);
+}
+
+.road-four {
+    width: 80%;
+    top: 76%;
+    left: -5%;
+    transform: rotate(-38deg);
+}
+
+.map-area {
+    position: absolute;
+    padding: 7px 10px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.75);
+    color: #64748b;
+    font-size: 12px;
+}
+
+.area-one {
+    top: 15%;
+    left: 8%;
+}
+
+.area-two {
+    top: 49%;
+    right: 8%;
+}
+
+.area-three {
+    bottom: 12%;
+    left: 35%;
+}
+
+.issue-pin {
+    position: absolute;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25);
+}
+
+.issue-pin span {
+    color: #fff;
+    font-weight: 800;
+    transform: rotate(45deg);
+}
+
+.pin-label {
+    position: absolute;
+    top: 35px;
+    left: 12px;
+    transform: rotate(45deg);
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #fff;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pin-pothole {
+    top: 28%;
+    left: 28%;
+    background: #dc2626;
+}
+
+.pin-drainage {
+    top: 53%;
+    left: 58%;
+    background: #ea580c;
+}
+
+.pin-light {
+    top: 69%;
+    left: 78%;
+    background: #2563eb;
+}
+
+.map-caption {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #64748b;
+    font-size: 11px;
+}
+
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 15px 20px;
+    color: #475569;
+    font-size: 13px;
+}
+
+.map-legend span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pothole-dot {
+    background: #dc2626;
+}
+
+.drainage-dot {
+    background: #ea580c;
+}
+
+.light-dot {
+    background: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .map-toolbar {
+        align-items: flex-start;
+    }
+
+    .map-canvas {
+        height: 320px;
+    }
+
+    .map-legend {
+        gap: 12px;
+    }
+}
+
