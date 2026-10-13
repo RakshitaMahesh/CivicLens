@@ -98,13 +98,25 @@
       <div id="reportsContainer" class="reports-grid"></div>
     </section>
 
-    <section id="map" class="section glass panel">
-      <h3><i class="fa-solid fa-map-pin"></i> Interactive Smart-City Map</h3>
-      <div class="map-wrap">
-        <iframe title="City map" src="https://maps.google.com/maps?q=New%20York&t=&z=11&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-        <div id="mapMarkers" class="marker-layer"></div>
-      </div>
-    </section>
+    ```html
+<section id="map" class="section glass panel">
+  <h3>
+    <i class="fa-solid fa-map-pin"></i>
+    Interactive Smart-City Map
+  </h3>
+
+  <div class="map-wrap">
+    <div class="map-placeholder">
+      <h4>🗺️ Smart-City Issue Map</h4>
+      <p>Monitor civic issues reported by citizens.</p>
+      <p>📍 Bengaluru | 🛣️ Road issues | 🌧️ Drainage alerts</p>
+      <p>Issue locations are shown in the Live Tracking section.</p>
+    </div>
+
+    <div id="mapMarkers" class="marker-layer"></div>
+  </div>
+</section>
+
 
     <section id="analytics" class="section glass panel">
       <h3><i class="fa-solid fa-chart-pie"></i> Smart Analytics</h3>
