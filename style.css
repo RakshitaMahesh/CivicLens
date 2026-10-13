@@ -454,3 +454,32 @@ body {
 .report-card .actions {
   margin: 0;
 }
+
+/* Compact report cards: remove excess vertical whitespace */
+.reports-grid {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+.report-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  min-height: 0;
+  height: auto;
+}
+.report-card h4,
+.report-card p,
+.report-card small {
+  margin: 0;
+  line-height: 1.35;
+}
+.report-card .tags,
+.report-card .actions {
+  margin: 0;
+}
+.report-card .tag {
+  line-height: 1.3;
+}
