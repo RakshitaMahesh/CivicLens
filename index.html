@@ -150,6 +150,35 @@
   <script src="script.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+(function () {
+  const mapElement = document.getElementById("civicLeafletMap");
+  if (!mapElement || typeof L === "undefined") return;
+
+  const map = L.map("civicLeafletMap").setView([12.9716, 77.5946], 12);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  L.marker([12.9716, 77.5946]).addTo(map)
+    .bindPopup("<b>Bengaluru City Centre</b><br>Sample demo location");
+
+  L.marker([12.9352, 77.6245]).addTo(map)
+    .bindPopup("<b>Pothole</b><br>Illustrative demo location");
+
+  L.marker([12.9987, 77.5920]).addTo(map)
+    .bindPopup("<b>Drainage</b><br>Illustrative demo location");
+
+  L.marker([12.9591, 77.6974]).addTo(map)
+    .bindPopup("<b>Streetlight</b><br>Illustrative demo location");
+
+  setTimeout(function () {
+    map.invalidateSize();
+  }, 200);
+})();
+</script>
   
 </body>
 </html>
